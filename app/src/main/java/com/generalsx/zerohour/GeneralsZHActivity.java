@@ -403,28 +403,54 @@ public class GeneralsZHActivity extends SDLActivity {
 
         super.onCreate(savedInstanceState);
 
-        // GeneralsX @feature Android port 29/10/2026 MODS overlay button.
-        // Added AFTER super.onCreate() on purpose: SDLActivity's onCreate()
+        // GeneralsX @feature Android port 30/10/2026 MODS overlay button.
+        // Injected AFTER super.onCreate() on purpose: SDLActivity's onCreate()
         // calls setContentView(), which replaces android.R.id.content -- a
-        // button added before that call is created and then thrown away.
-        // Wrapped in try/catch so a themed/absent content view can never take
-        // the whole game launch down with it.
+        // view added before that call is created and then thrown away.
+        // Bottom-left corner, semi-transparent black (#99000000) with gold
+        // lettering (#FFD700) and a faint gold hairline, so it stays readable
+        // over any map colour without covering play. Wrapped in try/catch so a
+        // themed/absent content view can never take the game launch down.
         try {
-            android.widget.Button modsBtn = new android.widget.Button(this);
+            final float density = getResources().getDisplayMetrics().density;
+            final int pad = Math.round(20 * density);       // 20dp padding
+            final int margin = Math.round(16 * density);
+            final int radius = Math.round(12 * density);
+
+            android.widget.TextView modsBtn = new android.widget.TextView(this);
             modsBtn.setText("MODS");
-            modsBtn.setBackgroundColor(0xFF2C2C2C);
             modsBtn.setTextColor(0xFFFFD700);
-            android.widget.FrameLayout.LayoutParams params =
-                    new android.widget.FrameLayout.LayoutParams(300, 150);
-            params.gravity = android.view.Gravity.TOP | android.view.Gravity.START;
-            params.setMargins(50, 50, 0, 0);
-            modsBtn.setLayoutParams(params);
+            modsBtn.setTextSize(android.util.TypedValue.COMPLEX_UNIT_SP, 14f);
+            modsBtn.setTypeface(android.graphics.Typeface.DEFAULT_BOLD);
+            modsBtn.setLetterSpacing(0.12f);
+            modsBtn.setGravity(android.view.Gravity.CENTER);
+            modsBtn.setPadding(pad, pad, pad, pad);
+
+            android.graphics.drawable.GradientDrawable bg =
+                    new android.graphics.drawable.GradientDrawable();
+            bg.setShape(android.graphics.drawable.GradientDrawable.RECTANGLE);
+            bg.setCornerRadius(radius);
+            bg.setColor(0x99000000);
+            bg.setStroke(Math.max(1, Math.round(density / 2)), 0x66FFD700);
+            modsBtn.setBackground(new android.graphics.drawable.RippleDrawable(
+                    android.content.res.ColorStateList.valueOf(0x33FFD700), bg, null));
+            modsBtn.setClickable(true);
+            modsBtn.setFocusable(true);
             modsBtn.setOnClickListener(new android.view.View.OnClickListener() {
                 @Override
                 public void onClick(android.view.View v) {
                     startActivity(new Intent(GeneralsZHActivity.this, ModsActivity.class));
                 }
             });
+
+            android.widget.FrameLayout.LayoutParams params =
+                    new android.widget.FrameLayout.LayoutParams(
+                            android.view.ViewGroup.LayoutParams.WRAP_CONTENT,
+                            android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
+            params.gravity = android.view.Gravity.BOTTOM | android.view.Gravity.START;
+            params.setMargins(margin, 0, 0, margin);
+            modsBtn.setLayoutParams(params);
+
             android.view.View content = findViewById(android.R.id.content);
             if (content instanceof android.view.ViewGroup) {
                 ((android.view.ViewGroup) content).addView(modsBtn);

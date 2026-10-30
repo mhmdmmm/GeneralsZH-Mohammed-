@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Dark navy-teal backdrop for the real Zero Hour eagle emblem
+<!-- Near-black backdrop for the real Zero Hour eagle emblem
      (mipmap-xxxhdpi/ic_launcher_foreground.png, upscaled from the actual
      GeneralsMD/Code/Main/Generals.ico game icon). -->
+<!-- GeneralsX @tweak Android port 30/10/2026 Retuned to the launcher's new
+     ground colour (gzh_background, blood-red-on-black theme) so the
+     home-screen icon and the menu it opens sit on the same black. -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
-    <solid android:color="#0F2530" />
+    <solid android:color="#0A0A0B" />
 </shape>

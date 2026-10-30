@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">GeneralsZH</string>
+    <string name="app_name">Generals ZH - Mohammed</string>
     <string name="common_cancel">Скасувати</string>
 
     <!-- SetupActivity: title / fallback -->
-    <string name="setup_window_title">Налаштування GeneralsZH</string>
-    <string name="setup_title">Command &amp; Conquer Generals: Zero Hour</string>
+    <string name="setup_window_title">Налаштування Zero Hour</string>
+    <string name="setup_title">Generals: Zero Hour</string>
     <string name="setup_subtitle">Налаштування Android</string>
     <string name="setup_fallback_warning">Звичайний інтерфейс налаштувань не завантажився (%1$s). Показано спрощений варіант, щоб ви все одно могли відкрити логи чи папку з грою.</string>
 
@@ -345,4 +345,18 @@
     <string name="setup_interface_scale_label">%1$d%%</string>
     <string name="setup_button_apply_interface_scale">Застосувати розмір інтерфейсу</string>
     <string name="setup_interface_scale_help">Збільшує інтерфейс гри без зміни її файлів: нижня панель із картою росте вгору від краю екрана, а панель здібностей генерала, чат, повідомлення про події, список гравців, ігрове меню зі збереженням і налаштуваннями та кнопки головного меню ростуть від того місця, де розташовані. За екран нічого не виходить: кожна частина збільшується лише наскільки вміщується, тому на широкому телефоні нижня панель стає вищою, а не ширшою, а поле бою над нею — нижчим. Працює разом із «Розміром тексту меню». Застосовується при наступному запуску гри.</string>
+
+    <!-- Mods screen (ModsActivity): .big mod files list -->
+    <string name="mods_title">Моди</string>
+    <string name="mods_subtitle">Керування файлами .big</string>
+    <string name="mods_close">ЗАКРИТИ</string>
+    <string name="mods_apply">ЗАСТОСУВАТИ МОДИ</string>
+    <string name="mods_apply_placeholder">Моди застосовано (заглушка)</string>
+    <string name="mods_folder_hint">Покладіть файли .big у цю теку й натисніть «Оновити».</string>
+    <string name="mods_refresh">Оновити</string>
+    <string name="mods_refreshed">Список оновлено</string>
+    <string name="mods_empty">У цій теці ще немає файлів .big.</string>
+    <string name="mods_selected_count">Вибрано %1$d з %2$d</string>
+    <string name="mods_need_access">Для переліку модів потрібен доступ до всіх файлів. Натисніть «Надати доступ».</string>
+    <string name="mods_grant">Надати доступ</string>
 </resources>

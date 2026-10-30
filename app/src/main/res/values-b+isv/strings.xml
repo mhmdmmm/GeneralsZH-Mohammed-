@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">GeneralsZH</string>
+    <string name="app_name">Generals ZH - Mohammed</string>
     <string name="common_cancel">Otkazati</string>
 
     <!-- SetupActivity: title / fallback -->
-    <string name="setup_window_title">Nastojenja GeneralsZH</string>
-    <string name="setup_title">Command &amp; Conquer Generals: Zero Hour</string>
+    <string name="setup_window_title">Nastojenja Zero Hour</string>
+    <string name="setup_title">Generals: Zero Hour</string>
     <string name="setup_subtitle">Nastojenja Android</string>
     <string name="setup_fallback_warning">Normalny interfejs nastojenj ne uspěl zagruziti sę (%1$s). Pokazan jest prosty zapasny interfejs, aby ty vsjedno mogl dostupiti do logov/papky igry.</string>
 
@@ -345,4 +345,18 @@
     <string name="setup_interface_scale_label">%1$d%%</string>
     <string name="setup_button_apply_interface_scale">Primeniti veličinu interfejsa</string>
     <string name="setup_interface_scale_help">Uvečaje interfejs igry bez měnjenja jej datotek: dolnja panel s kartoju raste vvŕh od kraja ekrana, a panel moćij generala, čat, poruky o događajah, spis igračev, igrovo meni s shranjenjem i nastavjenjami i ključi glavnogo menija rastut od města, gde sut. Ničto ne izhodi za ekran: každa čast uvečaje se jedino toliko, koliko se vměstiti, zato na širokom telefonu dolnja panel stanovi se vyšeju, ne širšeju, a pole bitvy nad njeju — nižeju. Dějstvuje vměste s Věličinoju teksta menija. Dějstvuje pri sledujućem spuštěniju igry.</string>
+
+    <!-- Mods screen (ModsActivity): .big mod files list -->
+    <string name="mods_title">Mody</string>
+    <string name="mods_subtitle">Upravjanje .big fajlov</string>
+    <string name="mods_close">Zatvoriti</string>
+    <string name="mods_apply">Priměniti mody</string>
+    <string name="mods_apply_placeholder">Mody priměnjene (zaměna)</string>
+    <string name="mods_folder_hint">Položite .big fajly v tutu papku i kliknite Obnoviti.</string>
+    <string name="mods_refresh">Obnoviti</string>
+    <string name="mods_refreshed">Spisok obnovjen</string>
+    <string name="mods_empty">V tutoj papce jeste nema .big fajlov.</string>
+    <string name="mods_selected_count">Vybranno %1$d iz %2$d</string>
+    <string name="mods_need_access">Za spisok modov treba dostup k vsěm fajlam. Kliknite Dati dostup.</string>
+    <string name="mods_grant">Dati dostup</string>
 </resources>

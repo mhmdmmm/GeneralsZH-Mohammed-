@@ -196,6 +196,28 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
-<activity android:name=".ModsActivity" />
+
+        <!-- GeneralsX @feature Android port 30/10/2026 Mods screen: lists the
+             .big files in /sdcard/GeneralsMods. Dark launcher theme (not the
+             game's fullscreen one), portrait-first like the other settings
+             screens, not exported: it is only ever started from inside the
+             app.
+
+             Storage permissions for this screen are the two pairs above:
+             READ/WRITE_EXTERNAL_STORAGE (maxSdkVersion 29) cover Android
+             9/10, where they are granted at runtime by ModsActivity itself.
+             On Android 11+ the OS ignores both of them no matter what the
+             manifest says: listing a folder the app did not create there
+             requires MANAGE_EXTERNAL_STORAGE, declared near the top of this
+             file and requested through its Settings page from the same
+             screen. Adding the two legacy permissions without maxSdkVersion
+             would change nothing on 11+: they are deprecated and silently
+             denied to apps targeting 30+. -->
+        <activity
+            android:name=".ModsActivity"
+            android:exported="false"
+            android:label="@string/mods_title"
+            android:theme="@style/Theme.GeneralsZHSettings"
+            android:configChanges="orientation|screenSize|keyboardHidden" />
     </application>
 </manifest>
